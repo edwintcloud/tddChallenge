@@ -1,7 +1,7 @@
 const mocha = require("mocha");
 const chai = require("chai");
-const utils = require("../utils");
-const expect = chai.expect;
+const { sayHello, area, perimeter, circleArea } = require("../utils");
+const should = chai.should();
 
 // ========================================================
 // NOTE: https://mochajs.org/#arrow-functions
@@ -10,19 +10,27 @@ const expect = chai.expect;
 // ========================================================
 
 it("should say hello", function() {
-  const hello = utils.sayHello();
-  expect(hello).to.be.a("string");
-  expect(hello).to.equal("Hello");
-  expect(hello).with.lengthOf(5);
+  const hello = sayHello();
+  hello.should.be.a("string");
+  hello.should.equal("Hello");
+  hello.should.have.lengthOf(5);
 });
 
 // ========================================================
 // Level 1 Challenges
 // ========================================================
 
-it("should return the area of a 5 by 6 rectangle");
+it("should return the area of a 5 by 6 rectangle", function() {
+  const testArea = area(5, 6);
+  testArea.should.be.a("number");
+  testArea.should.equal(30);
+});
 
-it("should return the are of a circle of radius 5");
+it("should return the area of a circle of radius 5", function() {
+  const testArea = circleArea(5);
+  testArea.should.be.a("number");
+  testArea.should.equal(78.53981633974483);
+});
 
 // ========================================================
 // Level 2 Challenges
