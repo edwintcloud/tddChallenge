@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit **/*.test.js --reporter=nyan",
+    "test": "mocha --exit **/*.test.js --reporter=list",
     "test-watch": "nodemon --exec 'npm test'"
   },
   "author": "",
